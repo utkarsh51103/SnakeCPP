@@ -210,17 +210,21 @@ void Logic()
 
         // Generate a new fruit at a valid position
         bool validPosition;
-        do {
+        do
+        {
             fruitX = rand() % width;
             fruitY = rand() % height;
             validPosition = true;
 
-           if(fruitX == width || fruitY == height || fruitX == 0 || fruitY == 0){
+            if (fruitX == width || fruitY == height || fruitX == 0 || fruitY == 0)
+            {
                 validPosition = false;
-           }
-            
-            for (int i = 0; i < ntail; i++) {
-                if (fruitX == tailX[i] && fruitY == tailY[i]) {
+            }
+
+            for (int i = 0; i < ntail; i++)
+            {
+                if (fruitX == tailX[i] && fruitY == tailY[i])
+                {
                     validPosition = false;
                     break;
                 }
@@ -231,7 +235,6 @@ void Logic()
         ntail++;
     }
 }
-
 
 int main()
 {
